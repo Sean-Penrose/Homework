@@ -16,7 +16,7 @@ FROM EVRegistry
 3. Using the EVRegistry, Write a query that shows all of the information on Battery Electric Vehicles (BEV) that are in the registry. 
 ```SQL
 --3.
-Select DISTINCT *
+Select *
 from EVRegistry
 WHERE ElectricVehicleType = 'Battery Electric Vehicle (BEV)'
 ```
@@ -24,7 +24,7 @@ WHERE ElectricVehicleType = 'Battery Electric Vehicle (BEV)'
 
 ```SQL
 --4.
-SELECT DISTINCT Make, Model
+SELECT Make, Model
 FROM EVRegistry
 WHERE BaseMSRP BETWEEN 20000 AND  35000
 
@@ -60,7 +60,8 @@ ORDER BY ModelYear DESC, Make
 SELECT StationID, Count(*) as numUses
 FROM EVCharging
 GROUP BY StationID 
-ORDER BY COUNT(*) DESC;
+ORDER BY COUNT(*) DESC
+LIMIT 5
 ``` 
 5.  Using EVCharging, For the folks who charged longer than 0.5 hours, show the min and max of the charging time for each user. Your output columns should be `userid`, `minTime`, and `maxTime`. Order this result set by the last two columns respectively. 
 ```SQL
@@ -76,17 +77,19 @@ ORDER BY 2,3
 1. Using EVCharging, Which day of the week has the highest average charging time? Round the answer to 2 decimal points.
 ```SQL
 --1.
-SELECT weekday, round(chargeTimeHrs, 2) as AvgChargeTime
+SELECT weekday, ROUND(AVG(chargeTimeHrs),2) as AvgChargeTime
 FROM EVCharging
-group by weekday
+GROUP BY weekday
+ORDER BY 2 DESC
+--Wednesday is the is answer with 2.94 charging hours on average.
 ```
 2. Using, EV charging, Find the total power consumed from charging EV's by each User. Return the `userId` and name the calculated column, `totalPower`. Round the answer to 2 deciaml points and list the out put in highest to lowest order. Limit the order to the top 15 users.
 ```SQL
 --2.
-SELECT userid, round(kwhTotal,2) as TotalPower
+SELECT userid, ROUND(SUM(kwhTotal),2) as TotalPower
 FROM EVCharging
 GROUP by userId
-ORDER by kwhtotal DESC
+ORDER by TotalPower DESC
 LIMIT 15 
 ``` 
 3. Using dimfacility and factCharge, write a query to find out which type of facility (GROUP BY) has the most amount of charging stations. Return `type Facility` and name the calculated column `numStation`. Order the result set from highest to lowest number of charging stations.

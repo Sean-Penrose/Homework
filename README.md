@@ -1,11 +1,11 @@
 # Sean Penrose
-### Married and currently living in Saint Louis, MO. I am currently studying to start a career in Data Analyitics. I'm really excited to learn and connect with new people!
-My goals for my journey learning Data Analyitics...
+### Married and currently living in Saint Louis, MO. I am currently studying to start a career in Data Analytics. I'm really excited to learn and connect with new people!
+My goals for my journey learning Data Analytics...
 1. Understand and become confident in my abilities using the variety of coding software taught in the class.
 2. Learn communication skills and get acclimated to the Agile Workflow to become experienced in dealing with a team.
 3. Gain more confidence in my ability to learn and continue to advance in my understanding of coding so I am prepared for the changing landscape of software development.
    
- Here is a link to an acticle on the origins of python that helped me gain a lot of perspective on how important it was at it's inception and continues be today. (the design of this webpage is beautiful!)
+ Here is a link to an article on the origins of Python that helped me gain a lot of perspective on how important it was at its inception and continues to be today. (The design of this webpage is beautiful!)
  
  https://inference-review.com/article/the-origins-of-python?ref=refind
 
